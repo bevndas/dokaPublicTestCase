@@ -29,13 +29,15 @@ import {
 } from '../../local_modules/doka';
 
 setPlugins(plugin_crop, plugin_finetune, plugin_filter, plugin_annotate, plugin_sticker);
-
+const STICKER_URL = '../assets/';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: [],
 })
 export class AppComponent {
+    redFrame = `${STICKER_URL}thinSquareFrameRed.png`;
+    whiteFrame = `${STICKER_URL}thinSquareFrameWhite.png`;
     constructor(private sanitizer: DomSanitizer) {}
 
     // editor generic state
@@ -60,63 +62,17 @@ export class AppComponent {
             [
                 'Frames',
                 [
-                    {   thumb: '../assets/thinSquareFrameWhite.svg',
-                        alt: 'Number one',
-                        shape: {
-                            backgroundImage: '../assets/thinSquareFrameWhite.svg',
-                            width: '100%',
-                            height: '100%',
-                            aspectRatio: 1,
-                        }
-                    },
-                    {   thumb: '../assets/thickSquareFrameWhite.svg',
-                        alt: 'Number two',
-                        shape: {
-                            backgroundImage: '../assets/thickSquareFrameWhite.svg',
-                            width: '100%',
-                            height: '100%',
-                            aspectRatio: 1,
-                        }
+                    {
+                        src: this.redFrame,
+                        height: 100,
+                        width: 100,
+                        alt: 'One'
                     },
                     {
-                        thumb: '../assets/thinSquareFrameBlack.svg',
-                        alt: 'Number three',
-                        shape: {
-                            backgroundImage: '../assets/thinSquareFrameBlack.svg',
-                            width: '100%',
-                            height: '100%',
-                            aspectRatio: 1,
-                        }
-                    },
-                    {
-                        thumb: '../assets/thinSquareFrameRed.svg',
-                        alt: 'Number four',
-                        shape: {
-                            backgroundImage: '../assets/thinSquareFrameRed.svg',
-                            width: '100%',
-                            height: '100%',
-                            aspectRatio: 1,
-                        }
-                    },
-                    {
-                        thumb: '../assets/thickSquareFrameBlack.svg',
-                        alt: 'Number one',
-                        shape: {
-                            backgroundImage: '../assets/thickSquareFrameBlack.svg',
-                            width: '100%',
-                            height: '100%',
-                            aspectRatio: 1,
-                        }
-                    },
-                    {
-                        thumb: '../assets/thinSquareFrameRed.svg',
-                        alt: 'Number five',
-                        shape: {
-                            backgroundImage: '../assets/thinSquareFrameRed.svg',
-                            width: '100%',
-                            height: '100%',
-                            aspectRatio: 1,
-                        }
+                        src: this.whiteFrame,
+                        height: 100,
+                        width: 100,
+                        alt: 'One'
                     },
                 ]
             ],
